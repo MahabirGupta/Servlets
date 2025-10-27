@@ -16,6 +16,6 @@ out.println(request.getParameter("name"));
 Date date = new Date();
 %>
 <div>Current date is <%=date%></div> --%>
-My First JSP ${name}
+My name is ${name} and password is ${password}
 </body>
 </html>

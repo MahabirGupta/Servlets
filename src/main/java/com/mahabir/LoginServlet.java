@@ -23,9 +23,11 @@ public class LoginServlet extends HttpServlet {
 //		out.println("My First Servlet");
 //		out.println("</body>");
 //		out.println("</html>");
-		 String name = request.getParameter("name");//get the parameter from the url
-		 
-		 request.setAttribute("name", name);//set the parameter as the attribute to pass to the jsp
+//		 String name = request.getParameter("name");//get the parameter from the url
+//		 
+//		 request.setAttribute("name", name);//set the parameter as the attribute to pass to the jsp
+		 request.setAttribute("name", request.getParameter("name"));
+		 request.setAttribute("password", request.getParameter("password"));
 		 request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 		 
 	 }
