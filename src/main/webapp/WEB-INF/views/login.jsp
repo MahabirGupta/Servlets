@@ -16,6 +16,11 @@ out.println(request.getParameter("name"));
 Date date = new Date();
 %>
 <div>Current date is <%=date%></div> --%>
-My name is ${name} and password is ${password}
+<%-- My name is ${name} and password is ${password} --%>
+<form action="/login.do" method="post">
+<!--creating an input element-->
+Enter your name <input type="text" name="name"/> <input type="submit" value="Login"/>
+
+</form>
 </body>
 </html>

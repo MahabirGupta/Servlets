@@ -26,10 +26,16 @@ public class LoginServlet extends HttpServlet {
 //		 String name = request.getParameter("name");//get the parameter from the url
 //		 
 //		 request.setAttribute("name", name);//set the parameter as the attribute to pass to the jsp
-		 request.setAttribute("name", request.getParameter("name"));
-		 request.setAttribute("password", request.getParameter("password"));
+//		 request.setAttribute("name", request.getParameter("name"));
+//		 request.setAttribute("password", request.getParameter("password"));
 		 request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 		 
 	 }
+	 
+	 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		 		request.setAttribute("name", request.getParameter("name"));
+			 request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+			 
+		 }
 
 }
