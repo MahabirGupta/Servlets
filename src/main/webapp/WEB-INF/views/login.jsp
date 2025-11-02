@@ -1,28 +1,12 @@
-<%@page import="java.util.Date" %>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Yahoo!!!! From JSP</title>
+<title>Yahoo!!</title>
 </head>
-
 <body>
-<%-- <%
-getServletContext().log("Dummy log from JSP");
-/*  out.println("Dummy<br>");*/
-out.println(request.getParameter("name"));
-/*  System.out.println("Hello");*/
-Date date = new Date();
-%>
-<div>Current date is <%=date%></div> --%>
-<%-- My name is ${name} and password is ${password} --%>
-<form action="/login.do" method="post">
-<!-- displaying errorMessage -->
-<p><font color="red"> ${errorMessage}</font></p>
-<!--creating an input element-->
-Name: <input type="text" name="name"/> Password: <input type="password" name="password"/> <input type="submit" value="Login"/>
- 
-</form>
+
+	<p><font color="red">${errorMessage}</font></p>
+	<form action="/login.do" method="POST">
+		Name  : <input name="name" type="text" /> Password  : <input name="password" type="password" /> <input type="submit" />
+	</form>
 </body>
 </html>
