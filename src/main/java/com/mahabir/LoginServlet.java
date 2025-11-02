@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns="/login.do")
 public class LoginServlet extends HttpServlet {
 	
+	private UserValidationService userValidationService = new UserValidationService();
+	
+	
 	 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		 
 //		PrintWriter out= response.getWriter();
@@ -33,8 +36,23 @@ public class LoginServlet extends HttpServlet {
 	 }
 	 
 	 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		 		request.setAttribute("name", request.getParameter("name"));
-			 request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+		 		String name = request.getParameter("name");
+		 		String password = request.getParameter("password");
+		 		
+		 		boolean isUserValid=userValidationService.isUserValid(name, password);
+		 		if(isUserValid) {
+//		 		send to welcome.jsp
+		 		request.setAttribute("name", name);
+				request.setAttribute("password", password);
+				request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+			 
+		 		}
+		 		else {
+//		 			send to login.jsp
+//		 			print error message
+		 			request.setAttribute("errorMessage", "You have entered invalid credentials!");
+		 			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+		 		}
 			 
 		 }
 
