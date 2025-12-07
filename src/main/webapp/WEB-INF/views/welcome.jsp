@@ -7,6 +7,6 @@
 <title>Welcome</title>
 </head>
 <body>
-Welcome Mahabir! 
+Welcome ${name} and Password is ${password}
 </body>
 </html>
