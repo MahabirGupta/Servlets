@@ -7,6 +7,6 @@
 <title>Welcome</title>
 </head>
 <body>
-Welcome ${name} 
+Welcome Mahabir! 
 </body>
 </html>
