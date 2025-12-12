@@ -1,4 +1,4 @@
-package com.mahabir;
+package com.mahabir.login;
 
 public class LoginService {
 	
