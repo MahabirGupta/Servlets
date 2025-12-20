@@ -7,6 +7,8 @@
 <title>Welcome</title>
 </head>
 <body>
-Welcome ${name} and Password is ${password}
+Welcome ${name}! <br>
+Now you can <a href="/list-todos"> manage your todos.</a>
+
 </body>
 </html>
