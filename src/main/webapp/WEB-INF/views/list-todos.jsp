@@ -4,7 +4,8 @@
 </head>
 <body>
 Hi ${name}
-<H1>Your Todos</H1>
- ${todos}
+<H1>Your Todos are</H1>
+ ${todos}<br>
+ <a class="button" href="/add-todo">Add</a>
 </body>
 </html>
