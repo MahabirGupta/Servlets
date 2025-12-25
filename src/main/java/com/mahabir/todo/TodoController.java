@@ -1,5 +1,6 @@
 package com.mahabir.todo;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.validation.Valid;
@@ -26,10 +27,10 @@ public class TodoController {
 		model.addAttribute("todos", todoService.retrieveTodos("in28Minutes"));
 		return "list-todos";
 	}
-	
+//	Initialize the Todo object (GET method)
 	@RequestMapping(value = "/add-todo", method = RequestMethod.GET)
 	public String showTodoPage(ModelMap model) {
-		model.addAttribute("todo", new Todo(0,"in28minutes","",new Date(),false));
+		model.addAttribute("todo", new Todo(0,"in28minutes","",new Date() ,false));
 		return "todo";
 	}
 
@@ -39,7 +40,7 @@ public class TodoController {
 		if(bindingResult.hasErrors()) {
 			return "todo";
 		}
-		todoService.addTodo("in28Minutes", todo.getDesc(), new Date(), false);
+		todoService.addTodo("in28Minutes", todo.getDesc(), todo.getTargetDate(), false);
 		model.clear();// to prevent request parameter "name" to be passed
 		return "redirect:/list-todos";
 	}

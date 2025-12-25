@@ -14,6 +14,10 @@
        <form:input path="desc" type="text" class="form-control" required="required"/>
        <!-- To display error message -->
        <form:errors path="desc" cssClass="text-warning"/>
+       
+       <form:label path="targetDate">Target Date</form:label>
+    	<form:input path="targetDate" type="date"/>
+    	<form:errors path="targetDate" cssClass="error"/>
        </fieldset> 
         <input class="btn btn-success" type="submit" value="Add" />
         

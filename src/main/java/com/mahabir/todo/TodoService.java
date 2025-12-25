@@ -1,5 +1,6 @@
 package com.mahabir.todo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -19,8 +20,8 @@ public class TodoService {
 		todos.add(new Todo(3, "in28Minutes", "Learn Hibernate", new Date(),false));
 	}
 	
-	public void addTodo(String name, String desc, Date targetDate, boolean isDone) {
-		todos.add(new Todo(++todoCount, name, desc, targetDate, isDone));
+	public void addTodo(String name, String desc, Date date, boolean isDone) {
+		todos.add(new Todo(++todoCount, name, desc, date, isDone));
 	}
 
 	public List<Todo> retrieveTodos(String user) {

@@ -1,9 +1,13 @@
 package com.mahabir.todo;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class Todo {
 	private int id;
@@ -11,6 +15,9 @@ public class Todo {
 //	Add validation for description
 	@Size(min=6,message="Enter at least 6 characters")
 	private String desc;
+//	Add validation for target date
+	@Future(message = "Target date must be in the future")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date targetDate;
 	private boolean isDone;
 	
