@@ -3,11 +3,21 @@ package com.mahabir.todo;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.validation.constraints.Size;
+
 public class Todo {
 	private int id;
-	private String user, desc;
+	private String user; 
+//	Add validation for description
+	@Size(min=6,message="Enter at least 6 characters")
+	private String desc;
 	private Date targetDate;
 	private boolean isDone;
+	
+//	Create default constructor
+	public Todo() {
+		
+	}
 	public Todo(int id, String user, String desc, Date targetDate, boolean isDone) {
 		super();
 		this.id = id;
