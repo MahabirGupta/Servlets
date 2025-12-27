@@ -9,6 +9,10 @@
 <h1>Add a Todo</h1>
 <!-- Using  a spring tag for form -->
     <form:form action="/add-todo" method="POST" commandName="todo">
+    <!-- Add hidden path for variable id -->
+    <!-- Hidden variables are variables that you do not want to show on the screen but is still available -->
+    <form:hidden path="id"/>
+    <%-- <form:hidden path="user"/> --%>
     <fieldset class="form-group">
        <form:label path="desc">Description :</form:label>  
        <form:input path="desc" type="text" class="form-control" required="required"/>
@@ -19,7 +23,7 @@
     	<form:input path="targetDate" type="date"/>
     	<form:errors path="targetDate" cssClass="error"/>
        </fieldset> 
-        <input class="btn btn-success" type="submit" value="Add" />
+        <input class="btn btn-success" type="submit" value="Submit" />
         
     </form:form>
     </div>

@@ -25,8 +25,14 @@
 						<td>${todo.desc}</td>
 						<td>${todo.targetDate}</td>
 						<td>${todo.done}</td>
+						
+						<td>
+						<!--Add a update button for every todo and passing the parameter-->
+						<a type="button" class="btn btn-primary" href="/update-todo?id=${todo.id}">Update</a>
 						<!--Add a delete button for every todo and passing the parameter-->
-						<td><a class="btn btn-danger" href="/delete-todo?id=${todo.id}">Delete</a></td>
+						<a class="btn btn-danger" href="/delete-todo?id=${todo.id}">Delete</a>
+						</td>
+						
 					</tr>
 				</c:forEach>
 			</tbody>
