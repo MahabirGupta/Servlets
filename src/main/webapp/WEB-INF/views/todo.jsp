@@ -8,7 +8,9 @@
 <div class="container">
 <h1>Add a Todo</h1>
 <!-- Using  a spring tag for form -->
-    <form:form action="/add-todo" method="POST" commandName="todo">
+    <%--  <form:form action="/add-todo" method="POST" commandName="todo">--%>
+    <form:form method="POST" modelAttribute="todo" action="${todo.id == 0 ? '/add-todo' : '/update-todo'}">
+    
     <!-- Add hidden path for variable id -->
     <!-- Hidden variables are variables that you do not want to show on the screen but is still available -->
     <form:hidden path="id"/>
@@ -19,10 +21,17 @@
        <!-- To display error message -->
        <form:errors path="desc" cssClass="text-warning"/>
        
-       <form:label path="targetDate">Target Date</form:label>
+       <%-- <form:label path="targetDate">Target Date</form:label>
     	<form:input path="targetDate" type="date"/>
-    	<form:errors path="targetDate" cssClass="error"/>
+    	<form:errors path="targetDate" cssClass="error"/> --%>
        </fieldset> 
+       
+       <fieldset class="form-group">
+                <form:label path="targetDate">Target Date</form:label>
+                <form:input path="targetDate" type="text" class="form-control"
+                    required="required" />
+                <form:errors path="targetDate" cssClass="text-warning" />
+            </fieldset>
         <input class="btn btn-success" type="submit" value="Submit" />
         
     </form:form>

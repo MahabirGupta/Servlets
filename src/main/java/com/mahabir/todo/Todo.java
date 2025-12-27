@@ -16,8 +16,8 @@ public class Todo {
 	@Size(min=6,message="Enter at least 6 characters")
 	private String desc;
 //	Add validation for target date
-	@Future(message = "Target date must be in the future")
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	@Future(message = "Target date must be in the future")
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date targetDate;
 	private boolean isDone;
 	
