@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 //create new LoginService()
 @Service
-public class LoginService {
+public class LoginServicebak {
 	
 	public boolean validateUser(String user,String password) {
 //		hardcoded to only have this user and password
