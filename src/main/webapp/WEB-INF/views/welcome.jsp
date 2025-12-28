@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +10,9 @@
 <title>Welcome</title>
 </head>
 <body>
+<div class="container">
 Welcome ${name}! <br>
 Now you can <a href="/list-todos"> manage your todos.</a>
-
+</div>
 </body>
 </html>
